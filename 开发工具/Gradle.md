@@ -338,4 +338,12 @@ dexOptions {
 ```
 
 
+# 5. Gradle 生命周期
 
+gradle从编译开始到编译完毕，一共经历了三个生命周期。
+
+* init：gradle的初始化配置选项，执行setting.gradle脚本。
+
+* configration：解析每一个project的build.gradle脚本，也就是解析所有projec的编译选项，然后生成taskgraph，这里包含了整个task的依赖关系。。
+
+* build：按照taskgraph进行编译。

@@ -8,16 +8,20 @@ public class Main {
     private static int res = 0;
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
-        String strs[] = str.split(" ");
-        int n = Integer.valueOf(strs[0]);
-        int arr[] = new int[strs.length - 1];
-        for (int i = 1; i < strs.length; i++) {
-            arr[i - 1] = Integer.valueOf(strs[i]);
+        double f = 1.456;
+    }
+
+
+    public static double dis(int mid, int dist[]) {
+        double r = 0.0;
+        for (int i = 0; i < dist.length; i++) {
+            if (i != dist.length - 1) {
+                double temp = (double)(dist[i] / (double)mid);
+                r += Math.ceil(temp);
+            } else {
+                r += Double.parseDouble(String.format("%.2f", dist[i] / (double)mid));
+            }
         }
-        int i = arr[0];
-        int j = arr[1];
-        List<Integer> list = new ArrayList<>();
+        return r;
     }
 }

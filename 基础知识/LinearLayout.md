@@ -76,4 +76,33 @@ divider必须和showDividers一起使用，否则没有效果。
 如果使用android:layout_gravity="right"会不起作用，因为orientation="horizontal"会让所有水平方向控制失效。
 
 
-### 1.4.2 分割线
+### 1.5 分权(android:layout_weight)
+
+```xml
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+ 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/holo_blue_dark"
+        android:padding="5dp"
+        android:text="left"/>
+ 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/holo_green_dark"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="right"/>
+ 
+</LinearLayout>
+```
