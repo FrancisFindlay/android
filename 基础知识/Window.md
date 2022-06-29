@@ -117,6 +117,14 @@ setContentView。
 
 这个方法最终会调用到window的setContentView，其实就是PhoneWindow的setContentView。
 
-如果没有DecorView，那就创建DecorView。
+### 2.1 如果没有DecorView，那就创建DecorView。
 
-创建DecorView需要通过generateDecor来完成，然后到
+创建DecorView需要通过generateDecor来完成，并且，还需要通过generateLayout来加载布局文件到decorview里面。
+
+### 2.2 将contentView加到decorView的mContentParent
+
+### 2.3 回调Activity的onContentChanged方法通知Activity视图已经发生改变
+
+### 2.4 DecorView已经组装完毕，ActivityThread的handleResumeActivity将decorView添加到Window。
+
+首先调用onResume，然后调用makeVisible，在这个方法里，DecorView完成了添加和显示。
